@@ -11,12 +11,14 @@
  * </script>
  */
 
+import './styles.scss';
+
 const MainModule = () => {
-	return {
-		name: 'MyModule',
-		purpose:
-			'Get you started developing npm modules that works in server as well as browser',
-	};
+  return {
+    name: 'MyModule',
+    purpose:
+      'Get you started developing npm modules that works in server as well as browser',
+  };
 };
 
 export { MainModule };

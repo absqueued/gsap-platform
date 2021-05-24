@@ -6,7 +6,7 @@ const outputDir = path.resolve(__dirname, './docs');
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'tfp-platform.bundled.js',
+    filename: 'js/tfp-platform.bundled.js',
     path: outputDir,
     library: 'tfp.platform',
     libraryTarget: 'umd',
@@ -27,15 +27,7 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          // 'style-loader',
-          MiniCssExtractPlugin.loader,
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
     ],
   },
@@ -46,8 +38,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: '[name].css',
-      chunkFilename: '[id].css',
+      filename: 'css/[name].[contenthash].css',
+      chunkFilename: 'css/[id].[contenthash].css',
     }),
   ],
 };

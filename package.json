@@ -1,8 +1,8 @@
 {
-  "name": "@optimumfuturist/babel-webpack-npm-starter",
+  "name": "tfp.platform",
   "version": "1.0.0",
-  "description": "Babel + Webpack starter for npm package authoring",
-  "main": "./lib/package.bundled.js",
+  "description": "GSAP animations for Platform page",
+  "main": "./docs/js/tfp-platform.bundled.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shekhardesigner/gsap-platform.git"
@@ -29,7 +29,7 @@
   "scripts": {
     "watch": "webpack -w",
     "start": "webpack serve --open --config webpack.dev.js",
-    "start:productin": "serve ./docs -p 9002",
+    "start:prod": "serve ./docs -p 9002",
     "build": "webpack --config webpack.prod.js",
     "prettify": "prettier --write ./src",
     "lint": "eslint ./src --fix"

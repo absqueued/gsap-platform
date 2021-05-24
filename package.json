@@ -3,15 +3,9 @@
   "version": "1.0.0",
   "description": "Babel + Webpack starter for npm package authoring",
   "main": "./lib/package.bundled.js",
-  "directories": {
-    "doc": "docs"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/optimumfuturist/babel-webpack-npm-starter.git"
-  },
-  "publishConfig": {
-    "access": "public"
+    "url": "git+https://github.com/shekhardesigner/gsap-platform.git"
   },
   "keywords": [
     "webpack",
@@ -26,12 +20,12 @@
     "amd",
     "commonjs"
   ],
-  "author": "Optimum Futurist Tech, Inc. <engineering@optimumfuturist.com> (http://www.optimumfuturist.com)",
+  "author": "Shekhar K. Sharma <hello@shekhardesigner.com> (http://www.shekhardesigner.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/optimumfuturist/babel-webpack-npm-starter/issues"
+    "url": "https://github.com/shekhardesigner/gsap-platform/issues"
   },
-  "homepage": "https://github.com/optimumfuturist/babel-webpack-npm-starter#readme",
+  "homepage": "https://github.com/shekhardesigner/gsap-platform#readme",
   "scripts": {
     "watch": "webpack -w",
     "start": "webpack serve --open --config webpack.dev.js",

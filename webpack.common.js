@@ -6,7 +6,7 @@ const outputDir = path.resolve(__dirname, './docs');
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'js/tfp-platform.bundled.js',
+    filename: 'js/tfp-platform.[contenthash].bundled.js',
     path: outputDir,
     library: 'tfp.platform',
     libraryTarget: 'umd',

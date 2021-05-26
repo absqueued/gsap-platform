@@ -30,7 +30,8 @@
     "watch": "webpack -w",
     "start": "webpack serve --open --config webpack.dev.js",
     "start:prod": "serve ./docs -p 9002",
-    "build": "webpack --config webpack.prod.js",
+    "build": "yarn clean && webpack --config webpack.prod.js",
+    "clean": "rm -rf docs/js/* docs/css/*",
     "prettify": "prettier --write ./src",
     "lint": "eslint ./src --fix"
   },

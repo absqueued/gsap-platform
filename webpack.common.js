@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const outputDir = path.resolve(__dirname, './docs');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/js/index.js',
   output: {
     filename: 'js/tfp-platform.[contenthash].bundled.js',
     path: outputDir,

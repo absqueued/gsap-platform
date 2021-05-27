@@ -1,0 +1,206 @@
+/** GSAP Platfomr */
+:root {
+  --nav-height: 4rem;
+  --container: 940px;
+  --large-display: 1199px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Andale Mono';
+  line-height: 1.5;
+  font-size: 1rem;
+  min-height: 100%;
+}
+
+.tfp {
+  &-nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: var(--nav-height);
+    font-size: 1.2rem;
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 4rem;
+    padding: 0 2rem;
+    border-bottom: 1px solid #222;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    color: #eee;
+    z-index: 999;
+    display: none;
+  }
+
+  &-platform {
+    height: 100%;
+
+    h1 {
+      font-size: 5rem;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 3.5rem;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: bold;
+    }
+
+    p {
+      margin-top: 2rem;
+    }
+
+  }
+
+  &-block {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    &:not(.first) {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+
+    &-full {
+      max-width: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    &-inner {
+      height: 100%;
+      padding: 0 20vw;
+      position: relative;
+      overflow: hidden;
+
+      &-full { padding: 0; }
+
+      @media screen and (max-width: --large-display) {
+        padding: 0 10vw;
+        &-full { padding: 0; }
+      }
+    }
+
+    &-media {
+      position: relative;
+      height: 85%;
+      padding: 10% 0 5%;
+
+      &-full {
+        padding: 0;
+        height: 100%;
+        opacity: 0.5;
+
+        > img,
+        > video {
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          min-height: 100%;
+          min-width: 100%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+
+      &-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -320px;
+        width: 640px;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+        @media screen and (max-width: --large-display) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.platform-flex {
+  &-row {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  &-col {
+    flex: 0 0 auto;
+
+    &-4 {
+      width: 40%;
+    }
+    &-8 {
+      width: 60%;
+    }
+  }
+}
+
+.al {
+  &-r {
+    text-align: right;
+  }
+
+  &-c {
+    text-align: center;
+  }
+}
+
+.airtime {
+  font-size: 1.1rem;
+  line-height: 1.6;
+
+  img {
+    max-height: 65vh;
+    margin-top: 5rem;
+  }
+}
+
+.multicamera {
+  &-media {
+    > img {
+      width: 300px;
+
+    }
+    > .i-left {
+      position: absolute;
+      top: 250px;
+      width: 500px;
+      left: 45px;
+    }
+
+    > .i-top {
+      position: absolute;
+      top: 100px;
+      right: 140px;
+    }
+
+    > .i-right {
+      position: absolute;
+      bottom: 0;
+      right: 40px;
+    }
+  }
+}

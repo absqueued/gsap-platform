@@ -2,7 +2,8 @@
  * Index
  */
 
-import '../styles.scss';
+// import '../styles.scss';
+import '../fixed.scss';
 
 import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
@@ -13,12 +14,19 @@ gsap.registerPlugin(TextPlugin, ScrollTrigger);
 // Blocks
 import { airtimeBlock } from './airtime';
 import { multiCameraBlock } from './multicamera';
-import { fullBlocks } from './fullblocks';
+import { automatedBlock } from './automated';
+import { sharingBlock } from './sharing';
+// import { canvasFrames } from './canvas';
+import { animateBlocks } from './blocks';
 
 function initPlatform() {
-  airtimeBlock();
-  // multiCameraBlock();
-  fullBlocks();
+  animateBlocks({
+    airtime: airtimeBlock,
+    multicamera: multiCameraBlock,
+    automated: automatedBlock,
+    socialsharing: sharingBlock,
+  });
+  // canvasFrames();
 }
 
 if (gsap) {

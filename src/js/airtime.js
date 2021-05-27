@@ -31,12 +31,12 @@ function airtimeBlock() {
   function makeTL2() {
     const tl2 = gsap.timeline({
       paused: true,
-      transformOrigin: '25% 25%',
+      // transformOrigin: '25% 25%',
       scrollTrigger: {
         trigger: airtime,
         start: 'top top',
         end: 'bottom center',
-        scrub: 2,
+        scrub: true,
         pin: true,
         pinSpacing: false,
         // markers: true,

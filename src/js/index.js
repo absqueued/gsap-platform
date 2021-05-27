@@ -12,16 +12,21 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
 // Blocks
-// import { airtimeBlock } from './airtime';
-// import { multiCameraBlock } from './multicamera';
-// import { fullBlocks } from './fullblocks';
-import { fixedBlocks } from './fixedBlocks';
+import { airtimeBlock } from './airtime';
+import { multiCameraBlock } from './multicamera';
+import { automatedBlock } from './automated';
+import { sharingBlock } from './sharing';
+// import { canvasFrames } from './canvas';
+import { animateBlocks } from './blocks';
 
 function initPlatform() {
-  // airtimeBlock();
-  // multiCameraBlock();
-  // fullBlocks();
-  fixedBlocks();
+  animateBlocks({
+    airtime: airtimeBlock,
+    multicamera: multiCameraBlock,
+    automated: automatedBlock,
+    socialsharing: sharingBlock,
+  });
+  // canvasFrames();
 }
 
 if (gsap) {

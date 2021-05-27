@@ -10,7 +10,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
-function fixedBlocks() {
+function animateBlocks(options) {
   const sections = gsap.utils.toArray('.tfp-block');
   let currentSection = sections[0];
 
@@ -26,8 +26,13 @@ function fixedBlocks() {
       start: () => (i - 0.5) * innerHeight,
       end: () => (i + 0.5) * innerHeight,
       scrub: true,
-      // when a new section activates (from either direction), set the section accordinglyl.
+      // when a new section activates (from either direction), set the section accordingly.
       onToggle: (self) => self.isActive && setSection(section),
+      onEnter: () => {
+        if(typeof options[section.id] === 'function') {
+          options[section.id]();
+        }
+      },
     });
   });
 
@@ -39,7 +44,7 @@ function fixedBlocks() {
     }
   }
 
-  // // handles the infinite part, wrapping around at either end....
+  // handles the infinite part, wrapping around at either end....
   // ScrollTrigger.create({
   //   start: 1,
   //   end: () => ScrollTrigger.maxScroll(window) - 1,
@@ -48,4 +53,4 @@ function fixedBlocks() {
   // }).scroll(2);
 }
 
-export { fixedBlocks };
+export { animateBlocks };

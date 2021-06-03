@@ -10,7 +10,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
-function multiCameraBlock() {
+function multiCameraBlock(startInt, endInt) {
   const multi = document.querySelector('.multicamera');
   const multiImagesLeft = multi.querySelector('.i-left');
   const multiImagesTop = multi.querySelector('.i-top');
@@ -22,7 +22,7 @@ function multiCameraBlock() {
     scrollTrigger: {
       trigger: multi,
       start: 'top top',
-      end: 'bottom top',
+      end: endInt,
       scrub: true,
       pin: true,
       pinSpacing: false,
@@ -30,9 +30,9 @@ function multiCameraBlock() {
   });
 
   multiTL
-    .from(multiImagesLeft, { opacity: 0, scale: 0.7, x: 30 }, '<')
-    .from(multiImagesRight, { opacity: 0, scale: 0.7, x: -40 }, '<')
-    .from(multiImagesTop, { opacity: 0, scale: 0.7, y: 50 }, '<')
+    .from(multiImagesLeft, { opacity: 0, x: -50 }, '<')
+    .from(multiImagesRight, { opacity: 0, x: 100 }, '<')
+    .from(multiImagesTop, { opacity: 0, y: -100 }, '<')
     .from(multiTexts, { opacity: 0, y: 50 });
 }
 

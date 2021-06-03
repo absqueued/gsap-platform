@@ -40,26 +40,28 @@ body {
     backdrop-filter: blur(5px);
     color: #eee;
     z-index: 999;
-    display: none;
   }
 
   &-platform {
     height: 100%;
 
     h1 {
-      font-size: 5rem;
+      font-size: 8.5vh;
       font-family: 'Nunito Sans', sans-serif;
       font-weight: bold;
     }
 
     h2 {
-      font-size: 3.5rem;
+      font-size: 6vh;
       font-family: 'Nunito Sans', sans-serif;
       font-weight: bold;
+      line-height: 1.05;
     }
 
     p {
       margin-top: 2rem;
+      font-size: 1.8vh;
+      line-height: 1.6;
     }
 
   }
@@ -67,27 +69,31 @@ body {
   &-block {
     height: 100%;
     width: 100%;
-    max-width: var(--container);
-    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
 
-    &-full {
-      max-width: none;
+    &:not(.first) {
+        opacity: 0;
+        visibility: hidden;
     }
 
     img {
       max-width: 100%;
     }
 
-    &-viewport {
-      //Viewport for GSAP to manipulate
-      height: 100%;
-    }
-
     &-inner {
       height: 100%;
-      padding: 0 2vw;
+      padding: 0 20vw;
       position: relative;
       overflow: hidden;
+
+      &-flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
 
       &-full { padding: 0; }
 
@@ -101,11 +107,18 @@ body {
       position: relative;
       height: 85%;
       padding: 10% 0 5%;
+      max-height: 820px;
+      width: 820px;
+      flex: 1 1 auto;
+
 
       &-full {
         padding: 0;
-        height: 100%;
+        margin: 0;
         opacity: 0.5;
+        width: 100%;
+        height: 100%;
+        max-height: none;
 
         > img,
         > video {
@@ -167,8 +180,6 @@ body {
 }
 
 .airtime {
-  font-size: 1.1rem;
-  line-height: 1.6;
 
   img {
     max-height: 65vh;
@@ -186,7 +197,7 @@ body {
       position: absolute;
       top: 250px;
       width: 500px;
-      left: 45px;
+      left: 5px;
     }
 
     > .i-top {
@@ -201,4 +212,28 @@ body {
       right: 40px;
     }
   }
+  &-texts {
+    @media screen and (min-width: 1921px) {
+      h2 { font-size: 3vh;}
+      p { font-size: 1vh;}
+    }
+  }
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  height: 5000px;
+  background: #000;
+}
+
+canvas {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100vw;
+  max-height: 100vh;
 }

@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
-function airtimeBlock() {
+function airtimeBlock(startInt, endInt) {
   const airtime = document.querySelector('.airtime');
   const airtimeImg = airtime.querySelector('img');
   const airtimeTitle = airtime.querySelector('h1');
@@ -34,7 +34,7 @@ function airtimeBlock() {
       scrollTrigger: {
         trigger: airtime,
         start: 'top top',
-        end: 'bottom center',
+        end: endInt,
         scrub: true,
         pin: true,
         pinSpacing: false,

@@ -10,7 +10,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
-function automatedBlock() {
+function automatedBlock(startInt, endInt) {
   const automated = document.querySelector('.automated');
   const automatedTitle = automated.querySelector('h2');
   const automatedTitleBy = automated.querySelector('p');
@@ -19,8 +19,8 @@ function automatedBlock() {
     delay: 0.2,
     scrollTrigger: {
       trigger: automated,
-      start: 'top top',
-      end: 'bottom top',
+      start: startInt,
+      end: endInt,
       scrub: true,
       pin: true,
       pinSpacing: false,

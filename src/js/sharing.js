@@ -10,7 +10,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
-function sharingBlock() {
+function sharingBlock(startInt, endInt) {
   const sharing = document.querySelector('.socialsharing');
   const sharingTitle = sharing.querySelector('h2');
   const sharingTitleBy = sharing.querySelector('p');
@@ -19,8 +19,8 @@ function sharingBlock() {
     delay: 0.2,
     scrollTrigger: {
       trigger: sharing,
-      start: 'top top',
-      end: 'bottom top',
+      start: startInt,
+      end: endInt,
       scrub: true,
       pin: true,
       pinSpacing: false,

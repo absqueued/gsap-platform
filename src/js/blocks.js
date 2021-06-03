@@ -6,7 +6,7 @@ import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// import { log } from './utils';
+import { log } from './utils';
 
 gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
@@ -17,20 +17,23 @@ function animateBlocks(options) {
   gsap.defaults({ overwrite: 'auto', duration: 0.3 });
 
   // stretch out the body height according to however many sections there are.
-  gsap.set('body', { height: sections.length * 100 + '%' });
+  gsap.set('body', { height: sections.length * 200 + '%' });
 
   // create a ScrollTrigger for each section
   sections.forEach((section, i) => {
+    let startInt = (i - 0.5) * (innerHeight * 2);
+    let endInt = (i + 0.5) * (innerHeight * 2);
+
     ScrollTrigger.create({
       // use dynamic scroll positions based on the window height (offset by half to make it feel natural)
-      start: () => (i - 0.5) * innerHeight,
-      end: () => (i + 0.5) * innerHeight,
+      start: startInt,
+      end: endInt,
       scrub: true,
       // when a new section activates (from either direction), set the section accordingly.
       onToggle: (self) => self.isActive && setSection(section),
       onEnter: () => {
-        if(typeof options[section.id] === 'function') {
-          options[section.id]();
+        if (typeof options[section.id] === 'function') {
+          options[section.id](startInt, endInt);
         }
       },
     });

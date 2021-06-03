@@ -41,8 +41,8 @@ function animateBlocks(options) {
 
   function setSection(newSection) {
     if (newSection !== currentSection) {
-      gsap.to(currentSection, { autoAlpha: 0, duration: 2 });
-      gsap.to(newSection, { autoAlpha: 1, duration: 2 });
+      gsap.to(currentSection, { autoAlpha: 0, duration: 1 });
+      gsap.to(newSection, { autoAlpha: 1, duration: 1 });
       currentSection = newSection;
     }
   }

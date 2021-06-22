@@ -20,8 +20,8 @@ function initPlatform() {
     multicamera: multiCameraBlock,
     automated: automatedBlock,
     socialsharing: sharingBlock,
+    // canvasframes: canvasFrames,
   });
-  // canvasFrames();
 }
 
 if (gsap) {

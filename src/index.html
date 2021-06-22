@@ -5,12 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GSAP - TFP Platform</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&display=swap" rel="stylesheet" />
+    <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Roboto Mono', monospace;
+      line-height: 1.5;
+      font-size: 1rem;
+      min-height: 100%;
+    }
+</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
     <main class="tfp-platform">
-      <nav class="tfp-nav">The Flash Pack | Platform</nav>
       <section class="airtime tfp-block first" id="airtime">
         <div class="tfp-block-inner tfp-block-inner-flex">
           <div class="platform-flex-row">
@@ -67,7 +87,8 @@
       <section class="socialsharing tfp-block" id="socialsharing">
         <div class="tfp-block-inner tfp-block-inner-full">
           <figure class="tfp-block-media tfp-block-media-full">
-            <img src="images/social-sharing-bg.jpg" alt="Social Sharing" />
+            <!-- <img src="images/social-sharing-bg.jpg" alt="Social Sharing" /> -->
+            <video src="videos/WG_platform_anim.mp4" autoplay muted />
           </figure>
           <article class="tfp-block-media-overlay al-c">
             <h2>Social Sharing</h2>
@@ -75,10 +96,10 @@
           </article>
         </div>
       </section>
-      <canvas class="canvasframes tfp-block canvas" id="canvasframes">
+      <!-- <canvas class="canvasframes tfp-block canvas" id="canvasframes">
           <h2>Video Frames</h2>
           <p>Looped animation using GSAP and Canvas Timeline</p>
-      </canvas>
+      </canvas> -->
     </main>
   </body>
 </html>

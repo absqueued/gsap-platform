@@ -1,5 +1,5 @@
 /**
- * Multicamera Block Animation
+ * All Block Animation
  */
 
 import { gsap } from 'gsap';

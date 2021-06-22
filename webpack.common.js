@@ -38,8 +38,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: 'css/[name].[contenthash].css',
-      chunkFilename: 'css/[id].[contenthash].css',
+      filename: 'css/tfp.platform.[contenthash].css',
+      chunkFilename: 'css/tfp.platform.[id].[contenthash].css',
     }),
   ],
 };
